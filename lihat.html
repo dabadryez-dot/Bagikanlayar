@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lihat Layar</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+        body{background:#121212;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;}
+        h1{font-size:22px;margin-bottom:12px;text-align:center;}
+        #info{font-size:15px;color:#ccc;margin-bottom:12px;}
+        #status{font-size:14px;color:#ffcc00;margin-bottom:16px;}
+        video{width:100%;max-width:900px;border-radius:8px;background:#000;box-shadow:0 0 15px rgba(0,0,0,0.6);}
+    </style>
+</head>
+<body>
+    <h1>Bagikan Layar</h1>
+    <div id="info"></div>
+    <div id="status">Menunggu koneksi pengirim...</div>
+    <video id="tampilanLayar" autoplay playsinline muted></video>
+    <script>
+        const parameter = new URLSearchParams(window.location.search);
+        const kodeSesi = parameter.get('kode') || 'Tidak ada kode';
+        document.getElementById('info').textContent = `Kode Sesi: ${kodeSesi}`;
+    </script>
+</body>
+</html>
